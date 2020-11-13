@@ -32,3 +32,63 @@ function pickFromArray(arr) {
 const listener = app.listen(process.env.PORT, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
+
+
+
+// thonyś code
+// const express = require("express");
+// const app = express();
+// // Step 1: Reading endpoint query
+// app.get("/add", function (request, response) {
+//   const value1 = parseInt(request.query.value1);
+//   const value2 = parseInt(request.query.value2);
+//   const result = parseInt(value1 + value2);
+//   response.send(`${value1} + ${value2} = ${result}`);
+// });
+// app.get("/substract", function (request, response) {
+//   const value1 = parseInt(request.query.value1);
+//   const value2 = parseInt(request.query.value2);
+//   const result = parseInt(value1 - value2);
+//   response.send(`${value1} - ${value2} = ${result}`);
+// });
+// app.get("/multiply", function (request, response) {
+//   const value1 = parseInt(request.query.value1);
+//   const value2 = parseInt(request.query.value2);
+//   const result = parseInt(value1 * value2);
+//   response.send(`${value1} * ${value2} = ${result}`);
+// });
+// app.get("/divide", function (request, response) {
+//   const value1 = parseInt(request.query.value1);
+//   const value2 = parseInt(request.query.value2);
+//   const result = parseFloat(value1 / value2);
+//   response.send(`${value1} / ${value2} = ${result}`);
+// });
+// // Step 2: Reading endpoints parameters
+// app.get("/add/:value1/:value2", (request, response) => {
+//   const value1 = parseInt(request.params.value1);
+//   const value2 = parseInt(request.params.value2);
+//   const result = parseInt(value1 + value2);
+//   response.send(`${value1} + ${value2} = ${result}`);
+// });
+// app.get("/substract/:value1/:value2", (request, response) => {
+//   const value1 = parseInt(request.params.value1);
+//   const value2 = parseInt(request.params.value2);
+//   const result = parseInt(value1 - value2);
+//   response.send(`${value1} - ${value2} = ${result}`);
+// });
+// app.get("/multiply/:value1/:value2", (request, response) => {
+//   const value1 = parseInt(request.params.value1);
+//   const value2 = parseInt(request.params.value2);
+//   const result = parseInt(value1 * value2);
+//   response.send(`${value1} * ${value2} = ${result}`);
+// });
+// app.get("/divide/:value1/:value2", (request, response) => {
+//   const value1 = parseInt(request.params.value1);
+//   const value2 = parseInt(request.params.value2);
+//   const result = parseInt(value1 / value2);
+//   response.send(`${value1} / ${value2} = ${result}`);
+// });
+// const port = 3000;
+// app.listen(port, function () {
+//   console.log(`Server is listening on port ${port}. Ready to accept requests!`);
+// });
