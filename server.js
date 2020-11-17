@@ -18,6 +18,34 @@ app.get("/", function (request, response) {
 
 //START OF YOUR CODE...
 
+//part 1 of the challenge
+
+app.get("/quotes", function (request, response) {
+  response.send(quotes);
+});
+app.get("/quotes/random", function (request, response) {
+  response.send(pickFromArray(quotes));
+});
+
+ // part 2 of the challenge
+
+
+app.get("/quotes/search", function (request, response) {
+  let term = request.query.term ;
+  response.send(search(term,quotes));
+});
+
+const search = (searchval,arr)=>{
+  let resultOfSearch = arr.filter(function(item) {
+       if (item.quote.includes(searchval)){
+         return true
+       }
+  })
+  return resultOfSearch;
+}
+
+
+
 //...END OF YOUR CODE
 
 //You can use this function to pick one element at random from a given array
@@ -35,60 +63,3 @@ const listener = app.listen(process.env.PORT, function () {
 
 
 
-// thonyś code
-// const express = require("express");
-// const app = express();
-// // Step 1: Reading endpoint query
-// app.get("/add", function (request, response) {
-//   const value1 = parseInt(request.query.value1);
-//   const value2 = parseInt(request.query.value2);
-//   const result = parseInt(value1 + value2);
-//   response.send(`${value1} + ${value2} = ${result}`);
-// });
-// app.get("/substract", function (request, response) {
-//   const value1 = parseInt(request.query.value1);
-//   const value2 = parseInt(request.query.value2);
-//   const result = parseInt(value1 - value2);
-//   response.send(`${value1} - ${value2} = ${result}`);
-// });
-// app.get("/multiply", function (request, response) {
-//   const value1 = parseInt(request.query.value1);
-//   const value2 = parseInt(request.query.value2);
-//   const result = parseInt(value1 * value2);
-//   response.send(`${value1} * ${value2} = ${result}`);
-// });
-// app.get("/divide", function (request, response) {
-//   const value1 = parseInt(request.query.value1);
-//   const value2 = parseInt(request.query.value2);
-//   const result = parseFloat(value1 / value2);
-//   response.send(`${value1} / ${value2} = ${result}`);
-// });
-// // Step 2: Reading endpoints parameters
-// app.get("/add/:value1/:value2", (request, response) => {
-//   const value1 = parseInt(request.params.value1);
-//   const value2 = parseInt(request.params.value2);
-//   const result = parseInt(value1 + value2);
-//   response.send(`${value1} + ${value2} = ${result}`);
-// });
-// app.get("/substract/:value1/:value2", (request, response) => {
-//   const value1 = parseInt(request.params.value1);
-//   const value2 = parseInt(request.params.value2);
-//   const result = parseInt(value1 - value2);
-//   response.send(`${value1} - ${value2} = ${result}`);
-// });
-// app.get("/multiply/:value1/:value2", (request, response) => {
-//   const value1 = parseInt(request.params.value1);
-//   const value2 = parseInt(request.params.value2);
-//   const result = parseInt(value1 * value2);
-//   response.send(`${value1} * ${value2} = ${result}`);
-// });
-// app.get("/divide/:value1/:value2", (request, response) => {
-//   const value1 = parseInt(request.params.value1);
-//   const value2 = parseInt(request.params.value2);
-//   const result = parseInt(value1 / value2);
-//   response.send(`${value1} / ${value2} = ${result}`);
-// });
-// const port = 3000;
-// app.listen(port, function () {
-//   console.log(`Server is listening on port ${port}. Ready to accept requests!`);
-// });
